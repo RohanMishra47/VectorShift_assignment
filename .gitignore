@@ -1,0 +1,30 @@
+# --- Python / FastAPI (Backend) ---
+# Virtual Environment
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.pytest_cache/
+
+# --- React / Node (Frontend) ---
+# Dependencies
+frontend/node_modules/
+# Production builds
+frontend/build/
+frontend/dist/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Environment variables
+frontend/.env.local
+frontend/.env
+
+# --- System / IDE ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
