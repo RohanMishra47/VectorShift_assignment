@@ -27,11 +27,14 @@ export const TextNode = ({ id, data }) => {
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
-  const dynamicHandles = variables.map((varName) => ({
+  const dynamicHandles = variables.map((varName, index) => ({
     type: "target",
     position: Position.Left,
     id: `${id}-${varName}`,
-    style: { top: "auto", bottom: "auto" }, // Stack handles evenly vertically
+    // Calculate vertical position based on index to spread them out
+    style: {
+      top: `${(index + 1) * (100 / (variables.length + 1))}%`,
+    },
   }));
 
   const nodeHandles = [
