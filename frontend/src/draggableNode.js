@@ -11,12 +11,9 @@ export const DraggableNode = ({ type, label }) => {
     event.dataTransfer.effectAllowed = "move";
   };
 
-  const buttonClass =
-    "px-4 py-2 bg-white border border-gray-200 rounded-md text-sm font-medium text-gray-600 hover:border-indigo-500 hover:text-indigo-500 shadow-sm transition-all";
-
   return (
     <div
-      className={buttonClass}
+      className="px-4 py-2 bg-white border border-gray-200 rounded-md text-sm font-medium text-gray-600 hover:border-indigo-500 hover:text-indigo-500 shadow-sm transition-all"
       onDragStart={(event) => onDragStart(event, type)}
       onDragEnd={(event) => (event.target.style.cursor = "grab")}
       style={{

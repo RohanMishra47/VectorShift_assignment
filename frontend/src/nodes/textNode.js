@@ -9,6 +9,9 @@ export const TextNode = ({ id, data }) => {
 
   const handleTextChange = (e) => {
     setCurrText(e.target.value);
+
+    e.target.style.height = "auto";
+    e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
   const nodeHandles = [
