@@ -5,10 +5,15 @@
 import { useCallback, useRef, useState } from "react";
 import ReactFlow, { Background, Controls, MiniMap } from "reactflow";
 import { useShallow } from "zustand/react/shallow";
+import { DatabaseNode } from "./nodes/databaseNode";
+import { DelayNode } from "./nodes/delayNode";
 import { InputNode } from "./nodes/inputNode";
 import { LLMNode } from "./nodes/llmNode";
+import { MathNode } from "./nodes/mathNode";
+import { NoteNode } from "./nodes/noteNode";
 import { OutputNode } from "./nodes/outputNode";
 import { TextNode } from "./nodes/textNode";
+import { TransformNode } from "./nodes/transformNode";
 import { useStore } from "./store";
 
 import "reactflow/dist/style.css";
@@ -20,6 +25,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  math: MathNode,
+  database: DatabaseNode,
+  transform: TransformNode,
+  delay: DelayNode,
+  note: NoteNode,
 };
 
 const selector = (state) => ({
