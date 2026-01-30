@@ -4,7 +4,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import ReactFlow, { Background, Controls, MiniMap } from "reactflow";
-import { useShallow } from "zustand/react/shallow";
+import { shallow } from "zustand/shallow";
 import { DatabaseNode } from "./nodes/databaseNode";
 import { DelayNode } from "./nodes/delayNode";
 import { InputNode } from "./nodes/inputNode";
@@ -53,7 +53,7 @@ export const PipelineUI = () => {
     onNodesChange,
     onEdgesChange,
     onConnect,
-  } = useStore(useShallow(selector));
+  } = useStore(selector, shallow);
 
   const getInitNodeData = (nodeID, type) => {
     let nodeData = { id: nodeID, nodeType: `${type}` };
